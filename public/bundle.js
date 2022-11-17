@@ -3911,7 +3911,9 @@ Janus.init({debug: "all", callback: function() {
 														room: myroom,
 														permanent: false,
 														description: "A test room",
-														is_private: true
+														is_private: true,
+														bitrate: 30000000,
+														publishers: 50
 													};
 													sfutest.send({ message: create, success: function(result) {
 														var event = result["videoroom"]
