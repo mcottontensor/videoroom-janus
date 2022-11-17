@@ -1,0 +1,9 @@
+const config = {
+	// ssl cert info
+	ssl: {
+		keyPath: './server/ssl/key.pem',
+		certPath: './server/ssl/cert.pem'
+	}
+}
+
+export { config }
