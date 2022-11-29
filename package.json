@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -L app.js",
-    "watch": "watchify public/index.js -o public/bundle.js -v --poll"
+    "start": "browserify public/index.js -o public/bundle.js -v --poll && nodemon -L app.js",
+    "watch": "watchify public/index.js -o public/bundle.js -v --poll",
+    "build": "browserify public/index.js -o public/bundle.js -v --poll"
   },
   "author": "Matt Cotton",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "webrtc-adapter": "^8.2.0"
   },
   "devDependencies": {
+    "browserify": "^17.0.0",
     "nodemon": "^2.0.20",
     "watchify": "^4.0.0"
   }

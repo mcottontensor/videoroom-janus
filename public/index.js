@@ -24,7 +24,7 @@ function publishOwnFeed(useAudio) {
 	let tracks = [];
 	if (useAudio)
 		tracks.push({ type: 'audio', capture: true, recv: false });
-	tracks.push({ type: 'video', capture: true, recv: false, simulcast: false });
+	tracks.push({ type: 'video', capture: { width: 1920, height: 1080 }, recv: false, simulcast: false });
 	//~ tracks.push({ type: 'data' });
 
 	sfutest.createOffer(
