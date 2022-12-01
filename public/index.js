@@ -22,10 +22,24 @@ function publishOwnFeed(useAudio) {
 	// We want sendonly audio and video (uncomment the data track
 	// too if you want to publish via datachannels as well)
 	let tracks = [];
-	if (useAudio)
-		tracks.push({ type: 'audio', capture: true, recv: false });
-	tracks.push({ type: 'video', capture: { width: 1920, height: 1080 }, recv: false, simulcast: false });
-	//~ tracks.push({ type: 'data' });
+	if (useAudio) {
+		tracks.push({
+			type: 'audio',
+			capture: true,
+			recv: false
+		});
+	}
+	tracks.push({
+		type: 'video',
+		capture: { width: 1920, height: 1080 },
+		recv: false,
+		simulcast: true,
+		simulcastMaxBitrates: {
+			high: 1_000_000,
+			medium: 500_00,
+			low: 100_00
+		}
+	});
 
 	sfutest.createOffer(
 		{
