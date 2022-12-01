@@ -35,9 +35,9 @@ function publishOwnFeed(useAudio) {
 		recv: false,
 		simulcast: true,
 		simulcastMaxBitrates: {
-			high: 1_000_000,
-			medium: 500_00,
-			low: 100_00
+			high: 50_000_000,
+			medium: 10_000_000,
+			low: 5_000_000
 		}
 	});
 
