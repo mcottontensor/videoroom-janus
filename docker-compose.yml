@@ -1,0 +1,15 @@
+---
+version: '3.3'
+
+services:
+  janus:
+    build: .
+    ports:
+      - 8989:8989
+      - 20000-21000:20000-21000
+    command: /opt/janus/bin/janus
+  videoroom:
+    build: .
+    ports:
+     - 3000:3000
+    command: npm start

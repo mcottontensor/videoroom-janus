@@ -1,4 +1,5 @@
 node_modules/
 server/ssl/*.pem
 config.js
+public/bundle.js
 
